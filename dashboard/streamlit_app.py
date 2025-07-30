@@ -3,7 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load and process data
-df = pd.read_csv("final_dashboard_data.csv")
+#df = pd.read_csv("final_dashboard_data.csv")
+import os
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), "final_dashboard_data.csv"))
+
 df['Date'] = pd.to_datetime(df['Date'])
 df['Profit'] = df['Revenue'] - df['Cost']
 
